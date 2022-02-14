@@ -70,6 +70,7 @@ class II2S(nn.Module):
         self.setup_dataloader(image_path=image_path)
         device = self.opts.device
         ibar = tqdm(self.dataloader, desc='Images')
+        results = []
         for ref_im_H, ref_im_L, ref_name in ibar:
             optimizer, latent = self.setup_optimizer()
             pbar = tqdm(range(self.opts.steps), desc='Embedding', leave=False)
@@ -97,7 +98,7 @@ class II2S(nn.Module):
                     self.save_intermediate_results(ref_name, gen_im, latent_in, step)
 
             self.save_results(ref_name, gen_im, latent_in)
-
+            results.append(latent_in)
 
 
 
