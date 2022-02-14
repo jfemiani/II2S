@@ -8,7 +8,7 @@ from utils.bicubic import BicubicDownSample
 from datasets.image_dataset import ImagesDataset
 from losses.loss import LossBuilder
 from torch.utils.data import DataLoader
-from tqdm import tqdm
+from tqdm.auto import tqdm
 import PIL
 import torchvision
 toPIL = torchvision.transforms.ToPILImage()
