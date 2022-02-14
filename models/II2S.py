@@ -99,7 +99,7 @@ class II2S(nn.Module):
 
             self.save_results(ref_name, gen_im, latent_in)
             results.append(latent_in)
-
+        return results
 
 
     def cal_loss(self, im_dict, latent_in):
